@@ -19761,3 +19761,6 @@ org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique co
 2024-02-27T17:05:38.001+07:00  INFO 70772 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-02-27T17:05:38.001+07:00  INFO 70772 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-02-27T17:05:38.002+07:00  INFO 70772 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-02-27T17:07:32.278+07:00  INFO 70772 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T17:07:32.283+07:00  INFO 70772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-27T17:07:32.286+07:00  INFO 70772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -61,7 +61,7 @@
 1. In package resource at application file 
 2. can modify to yml or use existing .properties
 3. Declare connect Database
-      
+      ```
    spring.datasource.url=${DATASOURCE_URL}   
    spring.datasource.username=${DATASOURCE_USERNAME}   
    spring.datasource.password=${DATASOURCE_PASSWORD}   
@@ -70,7 +70,9 @@
    spring.jpa.show-sql=true   
    spring.jpa.hibernate.ddl-auto=update   
    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect   
+   ```
 OR   
+```
    logging:   
    file:   
    name: app.log   
@@ -86,6 +88,7 @@ OR
    password: ${DATASOURCE_PASSWORD:''}   
    url: ${DATASOURCE_URL:jdbc:h2:mem:testdb}   
    driver-class-name: ${DATASOURCE_DRIVER_CLASS_NAME:org.h2.Driver}   
+```
 
 4. Above on Top bar can Edit Configuration for setting ENV,[ Set Name, Set Use Class Path to Main ]
 
