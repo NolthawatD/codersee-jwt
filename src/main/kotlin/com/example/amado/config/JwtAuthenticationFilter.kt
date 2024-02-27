@@ -20,10 +20,13 @@ class JwtAuthenticationFilter(
     override fun doFilterInternal(
         request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain
     ) {
-        println("=== doFilterInternal authHeader")
+        // #bearer token for authentication
         val authHeader: String? = request.getHeader("Authorization")
+        println("=== doFilterInternal authHeader : $authHeader")
 
-        println("=== doFilterInternal : $authHeader")
+        // #x-api-key for authorization
+        val apiKeyHeader: String? = request.getHeader("x-api-key")
+        println("=== doFilterInternal apiKeyHeader : $apiKeyHeader")
 
         if (authHeader.doesNotContainBearerToken()) {
             filterChain.doFilter(request, response)

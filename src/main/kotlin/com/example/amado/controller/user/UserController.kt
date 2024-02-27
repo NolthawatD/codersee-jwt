@@ -9,6 +9,7 @@ import com.example.amado.service.UserService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import java.util.*
@@ -18,7 +19,6 @@ import java.util.*
 class UserController(
     private val userService: UserService
 ) {
-
 
     @PostMapping("create")
     fun createUser(
@@ -38,6 +38,10 @@ class UserController(
     @GetMapping("all")
     fun getAllUsers(): ResponseEntity<List<UserDto>> =
         ResponseEntity(userService.getAllUsers(), HttpStatus.OK)
+
+    @GetMapping("me")
+    fun getCurrentUser(): ResponseEntity<UserDetails> =
+        ResponseEntity(userService.getCurrentUser(), HttpStatus.OK)
 
 
 //    private fun User.toResponse(): UserResponse =

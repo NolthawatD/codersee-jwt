@@ -7,6 +7,8 @@ import com.example.amado.data.User
 import com.example.amado.exception.BadRequestException
 import com.example.amado.exception.NotFoundException
 import com.example.amado.repository.UserRepository
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.util.ReflectionUtils
@@ -84,6 +86,15 @@ class UserService(
         checkUserForId(id)
         userRepository.deleteById(id)
         return "User with the ID: $id has been deleted."
+    }
+
+    fun getCurrentUser(): UserDetails? {
+        val authentication = SecurityContextHolder.getContext().authentication
+        return if (authentication != null && authentication.isAuthenticated) {
+            authentication.principal as UserDetails
+        } else {
+            null
+        }
     }
 
 

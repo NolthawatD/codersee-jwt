@@ -31,8 +31,8 @@ class SecurityConfiguration(
                     .permitAll()
                     .requestMatchers(HttpMethod.POST, "/api/v1/user/create")
                     .permitAll()
-                    .requestMatchers(HttpMethod.PATCH, "/api/v1/user/update/**")
-                    .permitAll()
+//                    .requestMatchers(HttpMethod.PATCH, "/api/v1/user/update/**")
+//                    .permitAll()
                     .requestMatchers("/api/v1/user/delete/**")
                     .hasRole("ADMIN")
                     .anyRequest()
@@ -51,6 +51,8 @@ class SecurityConfiguration(
             web.ignoring() // Spring Security should completely ignore URLs starting with /resources/
                 .requestMatchers(
                     "/api/v1/task**",
+                    "/api/v1/student/**",
+                    "/api/v1/course/**",
                 )
         }
 
