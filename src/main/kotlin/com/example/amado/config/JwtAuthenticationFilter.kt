@@ -20,10 +20,10 @@ class JwtAuthenticationFilter(
     override fun doFilterInternal(
         request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain
     ) {
-        println("doFilterInternal authHeader")
+        println("=== doFilterInternal authHeader")
         val authHeader: String? = request.getHeader("Authorization")
 
-        println("doFilterInternal : $authHeader")
+        println("=== doFilterInternal : $authHeader")
 
         if (authHeader.doesNotContainBearerToken()) {
             filterChain.doFilter(request, response)
@@ -33,13 +33,14 @@ class JwtAuthenticationFilter(
         val jwtToken = authHeader!!.extractTokenValue()
         val email = tokenService.extractEmail(jwtToken)
 
-        println("JwtAuthenticationFilter jwtToken: $jwtToken")
-        println("JwtAuthenticationFilter email: $email")
+        println("=== JwtAuthenticationFilter jwtToken: $jwtToken")
+        println("=== JwtAuthenticationFilter email: $email")
 
         if (email != null && SecurityContextHolder.getContext().authentication == null) {
             val foundUser = userDetailsService.loadUserByUsername(email)
 
             if (tokenService.isValid(jwtToken, foundUser)) {
+                println("=== updateContext foundUser: $email")
                 updateContext(foundUser, request)
             }
 

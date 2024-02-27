@@ -80,5 +80,11 @@ class UserService(
         return mappingUserEntityToDto(savedUser)
     }
 
+    fun deleteUser(id: Long): String {
+        checkUserForId(id)
+        userRepository.deleteById(id)
+        return "User with the ID: $id has been deleted."
+    }
+
 
 }

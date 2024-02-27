@@ -4959,3 +4959,99 @@ org.springframework.security.authentication.BadCredentialsException: Bad credent
 2024-02-27T14:30:43.314+07:00  INFO 63974 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-02-27T14:30:43.315+07:00  INFO 63974 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-02-27T14:30:43.316+07:00  INFO 63974 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-02-27T14:35:35.852+07:00  INFO 63974 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:35:35.857+07:00  INFO 63974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-27T14:35:35.859+07:00  INFO 63974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-27T14:35:37.318+07:00  INFO 64446 --- [main] com.example.amado.AmadoApplicationKt     : Starting AmadoApplicationKt using Java 21.0.2 with PID 64446 (/Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt/build/classes/kotlin/main started by nolthawat.d in /Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt)
+2024-02-27T14:35:37.319+07:00  INFO 64446 --- [main] com.example.amado.AmadoApplicationKt     : No active profile set, falling back to 1 default profile: "default"
+2024-02-27T14:35:37.678+07:00  INFO 64446 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-27T14:35:37.709+07:00  INFO 64446 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2024-02-27T14:35:37.985+07:00  INFO 64446 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-02-27T14:35:37.991+07:00  INFO 64446 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-27T14:35:37.991+07:00  INFO 64446 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-27T14:35:38.020+07:00  INFO 64446 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-27T14:35:38.021+07:00  INFO 64446 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 679 ms
+2024-02-27T14:35:38.085+07:00  INFO 64446 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-27T14:35:38.109+07:00  INFO 64446 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-27T14:35:38.120+07:00  INFO 64446 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-27T14:35:38.219+07:00  INFO 64446 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-27T14:35:38.236+07:00  INFO 64446 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-27T14:35:38.333+07:00  INFO 64446 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64b73e0a
+2024-02-27T14:35:38.334+07:00  INFO 64446 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-27T14:35:38.348+07:00  WARN 64446 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-27T14:35:38.677+07:00  INFO 64446 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-27T14:35:38.733+07:00  INFO 64446 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:35:38.950+07:00  INFO 64446 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-27T14:35:39.269+07:00  WARN 64446 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-27T14:35:39.363+07:00  INFO 64446 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53251e03, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ffae42f, org.springframework.security.web.context.SecurityContextHolderFilter@5f8c319, org.springframework.security.web.header.HeaderWriterFilter@8e0b048, org.springframework.web.filter.CorsFilter@58182d7, org.springframework.security.web.authentication.logout.LogoutFilter@51a7ee4e, com.example.amado.config.JwtAuthenticationFilter@4057eb76, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d6de24e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3acd06b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1eedf268, org.springframework.security.web.session.SessionManagementFilter@5411a529, org.springframework.security.web.access.ExceptionTranslationFilter@72933ccb, org.springframework.security.web.access.intercept.AuthorizationFilter@4603845b]
+2024-02-27T14:35:39.365+07:00  WARN 64446 --- [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/api/v1/task**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-27T14:35:39.365+07:00  INFO 64446 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/api/v1/task**']
+2024-02-27T14:35:39.441+07:00  INFO 64446 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2024-02-27T14:35:39.445+07:00  INFO 64446 --- [main] com.example.amado.AmadoApplicationKt     : Started AmadoApplicationKt in 2.327 seconds (process running for 2.504)
+2024-02-27T14:35:57.377+07:00  INFO 64446 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-27T14:35:57.377+07:00  INFO 64446 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-27T14:35:57.379+07:00  INFO 64446 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-02-27T14:37:53.779+07:00  INFO 64446 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:37:53.784+07:00  INFO 64446 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-27T14:37:53.786+07:00  INFO 64446 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-27T14:37:55.345+07:00  INFO 64544 --- [main] com.example.amado.AmadoApplicationKt     : Starting AmadoApplicationKt using Java 21.0.2 with PID 64544 (/Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt/build/classes/kotlin/main started by nolthawat.d in /Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt)
+2024-02-27T14:37:55.346+07:00  INFO 64544 --- [main] com.example.amado.AmadoApplicationKt     : No active profile set, falling back to 1 default profile: "default"
+2024-02-27T14:37:55.695+07:00  INFO 64544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-27T14:37:55.718+07:00  INFO 64544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2024-02-27T14:37:55.955+07:00  INFO 64544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-02-27T14:37:55.960+07:00  INFO 64544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-27T14:37:55.961+07:00  INFO 64544 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-27T14:37:55.983+07:00  INFO 64544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-27T14:37:55.984+07:00  INFO 64544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 613 ms
+2024-02-27T14:37:56.044+07:00  INFO 64544 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-27T14:37:56.065+07:00  INFO 64544 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-27T14:37:56.077+07:00  INFO 64544 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-27T14:37:56.159+07:00  INFO 64544 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-27T14:37:56.169+07:00  INFO 64544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-27T14:37:56.275+07:00  INFO 64544 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6aad919c
+2024-02-27T14:37:56.275+07:00  INFO 64544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-27T14:37:56.294+07:00  WARN 64544 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-27T14:37:56.615+07:00  INFO 64544 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-27T14:37:56.672+07:00  INFO 64544 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:37:56.883+07:00  INFO 64544 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-27T14:37:57.241+07:00  WARN 64544 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-27T14:37:57.341+07:00  INFO 64544 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7980eb2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15cba6dc, org.springframework.security.web.context.SecurityContextHolderFilter@68769265, org.springframework.security.web.header.HeaderWriterFilter@5ce50c82, org.springframework.web.filter.CorsFilter@81a193b, org.springframework.security.web.authentication.logout.LogoutFilter@13190355, com.example.amado.config.JwtAuthenticationFilter@7a5b561b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69f35d31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c1d547, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3eff5c32, org.springframework.security.web.session.SessionManagementFilter@5f9d29c4, org.springframework.security.web.access.ExceptionTranslationFilter@6eec092, org.springframework.security.web.access.intercept.AuthorizationFilter@158119bf]
+2024-02-27T14:37:57.343+07:00  WARN 64544 --- [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/api/v1/task**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-27T14:37:57.343+07:00  INFO 64544 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/api/v1/task**']
+2024-02-27T14:37:57.425+07:00  INFO 64544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2024-02-27T14:37:57.430+07:00  INFO 64544 --- [main] com.example.amado.AmadoApplicationKt     : Started AmadoApplicationKt in 2.301 seconds (process running for 2.486)
+2024-02-27T14:37:59.736+07:00  INFO 64544 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-27T14:37:59.737+07:00  INFO 64544 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-27T14:37:59.737+07:00  INFO 64544 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-02-27T14:38:17.523+07:00  INFO 64544 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:38:17.525+07:00  INFO 64544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-27T14:38:17.526+07:00  INFO 64544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-27T14:38:18.956+07:00  INFO 64572 --- [main] com.example.amado.AmadoApplicationKt     : Starting AmadoApplicationKt using Java 21.0.2 with PID 64572 (/Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt/build/classes/kotlin/main started by nolthawat.d in /Users/nolthawat.d/Documents/Drive_C/kotlin/codersee-jwt)
+2024-02-27T14:38:18.956+07:00  INFO 64572 --- [main] com.example.amado.AmadoApplicationKt     : No active profile set, falling back to 1 default profile: "default"
+2024-02-27T14:38:19.302+07:00  INFO 64572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-27T14:38:19.328+07:00  INFO 64572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+2024-02-27T14:38:19.561+07:00  INFO 64572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-02-27T14:38:19.566+07:00  INFO 64572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-27T14:38:19.566+07:00  INFO 64572 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-27T14:38:19.588+07:00  INFO 64572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-27T14:38:19.589+07:00  INFO 64572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 609 ms
+2024-02-27T14:38:19.645+07:00  INFO 64572 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-27T14:38:19.666+07:00  INFO 64572 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-27T14:38:19.677+07:00  INFO 64572 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-27T14:38:19.761+07:00  INFO 64572 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-27T14:38:19.772+07:00  INFO 64572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-27T14:38:19.872+07:00  INFO 64572 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6aad919c
+2024-02-27T14:38:19.872+07:00  INFO 64572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-27T14:38:19.886+07:00  WARN 64572 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-27T14:38:20.205+07:00  INFO 64572 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-27T14:38:20.250+07:00  INFO 64572 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-27T14:38:20.475+07:00  INFO 64572 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-27T14:38:20.790+07:00  WARN 64572 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-27T14:38:20.885+07:00  INFO 64572 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7980eb2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15cba6dc, org.springframework.security.web.context.SecurityContextHolderFilter@68769265, org.springframework.security.web.header.HeaderWriterFilter@5ce50c82, org.springframework.web.filter.CorsFilter@81a193b, org.springframework.security.web.authentication.logout.LogoutFilter@13190355, com.example.amado.config.JwtAuthenticationFilter@7a5b561b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69f35d31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c1d547, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3eff5c32, org.springframework.security.web.session.SessionManagementFilter@5f9d29c4, org.springframework.security.web.access.ExceptionTranslationFilter@6eec092, org.springframework.security.web.access.intercept.AuthorizationFilter@158119bf]
+2024-02-27T14:38:20.887+07:00  WARN 64572 --- [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/api/v1/task**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-27T14:38:20.887+07:00  INFO 64572 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/api/v1/task**']
+2024-02-27T14:38:20.960+07:00  INFO 64572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2024-02-27T14:38:20.965+07:00  INFO 64572 --- [main] com.example.amado.AmadoApplicationKt     : Started AmadoApplicationKt in 2.217 seconds (process running for 2.384)
+2024-02-27T14:38:23.105+07:00  INFO 64572 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-27T14:38:23.105+07:00  INFO 64572 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-27T14:38:23.105+07:00  INFO 64572 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

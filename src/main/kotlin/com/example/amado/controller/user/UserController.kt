@@ -19,14 +19,11 @@ class UserController(
     private val userService: UserService
 ) {
 
+
     @PostMapping("create")
     fun createUser(
         @Valid @RequestBody request: UserCreateRequest
     ): ResponseEntity<UserDto> = ResponseEntity(userService.createUser(request), HttpStatus.OK)
-
-    @GetMapping("all")
-    fun getAllUsers(): ResponseEntity<List<UserDto>> =
-        ResponseEntity(userService.getAllUsers(), HttpStatus.OK)
 
     @PatchMapping("update/{id}")
     fun updateUser(
@@ -34,6 +31,13 @@ class UserController(
         @Valid @RequestBody request: UserUpdateRequest
     ): ResponseEntity<UserDto> = ResponseEntity(userService.updateUser(id, request), HttpStatus.OK)
 
+    @DeleteMapping("delete/{id}")
+    fun deleteTask(@PathVariable id: Long): ResponseEntity<String> =
+        ResponseEntity(userService.deleteUser(id), HttpStatus.OK)
+
+    @GetMapping("all")
+    fun getAllUsers(): ResponseEntity<List<UserDto>> =
+        ResponseEntity(userService.getAllUsers(), HttpStatus.OK)
 
 
 //    private fun User.toResponse(): UserResponse =

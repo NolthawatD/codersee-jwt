@@ -33,7 +33,7 @@ class SecurityConfiguration(
                     .permitAll()
                     .requestMatchers(HttpMethod.PATCH, "/api/v1/user/update/**")
                     .permitAll()
-                    .requestMatchers("/api/v1/user**")
+                    .requestMatchers("/api/v1/user/delete/**")
                     .hasRole("ADMIN")
                     .anyRequest()
                     .fullyAuthenticated()
