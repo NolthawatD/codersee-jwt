@@ -8,6 +8,7 @@ import com.example.amado.repository.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import java.util.UUID
+import java.util.stream.Collectors
 
 @Service
 class UserService(
@@ -43,6 +44,9 @@ class UserService(
 
         val saveUser: User = userRepository.save(user)
         return mappingUserEntityToDto(saveUser)
-
     }
+
+    fun getAllUsers(): List<UserDto> =
+        userRepository.findAll().stream().map(this::mappingUserEntityToDto).collect(Collectors.toList())
+
 }

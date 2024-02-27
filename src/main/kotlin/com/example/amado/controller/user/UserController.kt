@@ -29,16 +29,11 @@ class UserController(
         @Valid @RequestBody request: UserCreateRequest
     ): ResponseEntity<UserDto> = ResponseEntity(userService.createUser(request), HttpStatus.OK)
 
+    @GetMapping("all")
+    fun getAllUsers(): ResponseEntity<List<UserDto>> =
+        ResponseEntity(userService.getAllUsers(), HttpStatus.OK)
 
 
-//    private fun UserCreateRequest.toModel(): User =
-//        User(
-//            id = UUID.randomUUID(),
-//            email = this.email,
-//            password = this.password,
-//            role = Role.USER,
-//        )
-//
 //    private fun User.toResponse(): UserResponse =
 //        UserResponse(
 //            uuid = this.id,
