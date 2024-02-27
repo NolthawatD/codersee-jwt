@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.server.ResponseStatusException
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/auth")
 class AuthController(
     private val authenticationService: AuthenticationService
 ) {
-    @PostMapping("auth")
+    @PostMapping("")
     fun authenticate(@RequestBody authRequest: AuthenticationRequest): AuthenticationResponse =
         authenticationService.authentication(authRequest)
 
-    @PostMapping("auth/refresh")
+    @PostMapping("refresh")
     fun refreshAccessToken(
         @RequestBody request: RefreshTokenRequest
     ): TokenResponse =

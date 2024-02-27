@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/task")
 class TaskController(private val service: TaskService) {
-    @GetMapping("all-tasks")
+    @GetMapping("")
     fun getAllTasks() : ResponseEntity<List<TaskDto>>  = ResponseEntity(service.getAllTasks(), HttpStatus.OK)
 
-    @GetMapping("open-tasks")
+    @GetMapping("open")
     fun getAllOpenTasks(): ResponseEntity<List<TaskDto>> = ResponseEntity(service.getAllOpenTasks(), HttpStatus.OK)
 
-    @GetMapping("closed-tasks")
+    @GetMapping("close")
     fun getAllClosedTasks(): ResponseEntity<List<TaskDto>> = ResponseEntity(service.getAllCloseTasks(), HttpStatus.OK)
 
-    @GetMapping("task/{id}")
+    @GetMapping("{id}")
     fun getTaskById(@PathVariable id: Long): ResponseEntity<TaskDto> =
         ResponseEntity(service.getTaskById(id), HttpStatus.OK)
 

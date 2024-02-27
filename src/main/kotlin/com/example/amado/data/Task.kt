@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(
-    name = "task",
+    name = "tasks",
     uniqueConstraints = [UniqueConstraint(name = "uk_task_description", columnNames = ["description"])]
 )
 

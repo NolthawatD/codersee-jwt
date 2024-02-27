@@ -14,18 +14,18 @@ import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
 class JwtAuthenticationFilter(
-    private val userDetailsService: CustomUserDetailsService,
-    private val tokenService: TokenService
-): OncePerRequestFilter() {
+    private val userDetailsService: CustomUserDetailsService, private val tokenService: TokenService
+) : OncePerRequestFilter() {
 
     override fun doFilterInternal(
-        request: HttpServletRequest,
-        response: HttpServletResponse,
-        filterChain: FilterChain
+        request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain
     ) {
-       val authHeader: String? = request.getHeader("Authorization")
+        println("doFilterInternal authHeader")
+        val authHeader: String? = request.getHeader("Authorization")
 
-        if(authHeader.doesNotContainBearerToken()) {
+        println("doFilterInternal : $authHeader")
+
+        if (authHeader.doesNotContainBearerToken()) {
             filterChain.doFilter(request, response)
             return
         }
@@ -33,10 +33,13 @@ class JwtAuthenticationFilter(
         val jwtToken = authHeader!!.extractTokenValue()
         val email = tokenService.extractEmail(jwtToken)
 
-        if (email != null && SecurityContextHolder.getContext().authentication == null){
+        println("JwtAuthenticationFilter jwtToken: $jwtToken")
+        println("JwtAuthenticationFilter email: $email")
+
+        if (email != null && SecurityContextHolder.getContext().authentication == null) {
             val foundUser = userDetailsService.loadUserByUsername(email)
 
-            if(tokenService.isValid(jwtToken, foundUser)){
+            if (tokenService.isValid(jwtToken, foundUser)) {
                 updateContext(foundUser, request)
             }
 
@@ -51,9 +54,7 @@ class JwtAuthenticationFilter(
         SecurityContextHolder.getContext().authentication = authToken
     }
 
-    private fun String?.doesNotContainBearerToken(): Boolean =
-        this == null || !this.startsWith("Bearer ")
+    private fun String?.doesNotContainBearerToken(): Boolean = this == null || !this.startsWith("Bearer ")
 
-    private fun String.extractTokenValue(): String =
-        this.substringAfter("Bearer ")
+    private fun String.extractTokenValue(): String = this.substringAfter("Bearer ")
 }
