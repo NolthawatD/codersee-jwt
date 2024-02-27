@@ -1,4 +1,4 @@
-package com.example.amado.data.model
+package com.example.amado.controller.task
 
 import com.example.amado.data.Priority
 

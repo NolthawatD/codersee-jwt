@@ -1,8 +1,5 @@
 package com.example.amado.controller.task
 
-import com.example.amado.data.model.TaskCreateRequest
-import com.example.amado.data.model.TaskDto
-import com.example.amado.data.model.TaskUpdateRequest
 import com.example.amado.service.TaskService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus

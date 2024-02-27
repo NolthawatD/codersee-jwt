@@ -1,9 +1,9 @@
 package com.example.amado.service
 
 import com.example.amado.data.Task
-import com.example.amado.data.model.TaskCreateRequest
-import com.example.amado.data.model.TaskDto
-import com.example.amado.data.model.TaskUpdateRequest
+import com.example.amado.controller.task.TaskCreateRequest
+import com.example.amado.controller.task.TaskDto
+import com.example.amado.controller.task.TaskUpdateRequest
 import com.example.amado.exception.BadRequestException
 import com.example.amado.exception.TaskNotFoundException
 import com.example.amado.repository.TaskRepository

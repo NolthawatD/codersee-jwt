@@ -1,4 +1,4 @@
-package com.example.amado.data.model
+package com.example.amado.controller.article
 
 import java.util.UUID
 
