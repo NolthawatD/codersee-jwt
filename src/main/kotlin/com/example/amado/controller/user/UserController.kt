@@ -2,19 +2,14 @@ package com.example.amado.controller.user
 
 import com.example.amado.controller.task.TaskCreateRequest
 import com.example.amado.controller.task.TaskDto
+import com.example.amado.controller.task.TaskUpdateRequest
 import com.example.amado.data.Role
 import com.example.amado.data.User
 import com.example.amado.service.UserService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import java.util.*
 
@@ -32,6 +27,13 @@ class UserController(
     @GetMapping("all")
     fun getAllUsers(): ResponseEntity<List<UserDto>> =
         ResponseEntity(userService.getAllUsers(), HttpStatus.OK)
+
+    @PatchMapping("update/{id}")
+    fun updateUser(
+        @PathVariable id: Long,
+        @Valid @RequestBody request: UserUpdateRequest
+    ): ResponseEntity<UserDto> = ResponseEntity(userService.updateUser(id, request), HttpStatus.OK)
+
 
 
 //    private fun User.toResponse(): UserResponse =

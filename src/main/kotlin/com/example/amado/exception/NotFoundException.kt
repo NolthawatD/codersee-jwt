@@ -5,4 +5,4 @@ import org.springframework.web.bind.annotation.ResponseStatus
 
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-data class TaskNotFoundException(override val message: String) : RuntimeException()
+data class NotFoundException(override val message: String) : RuntimeException()

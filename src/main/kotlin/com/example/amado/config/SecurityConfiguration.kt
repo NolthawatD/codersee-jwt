@@ -29,7 +29,9 @@ class SecurityConfiguration(
                 it
                     .requestMatchers("/api/v1/auth", "/api/v1/auth/refresh", "/error")
                     .permitAll()
-                    .requestMatchers(HttpMethod.POST, "/api/v1/user")
+                    .requestMatchers(HttpMethod.POST, "/api/v1/user/create")
+                    .permitAll()
+                    .requestMatchers(HttpMethod.PATCH, "/api/v1/user/update/**")
                     .permitAll()
                     .requestMatchers("/api/v1/user**")
                     .hasRole("ADMIN")
@@ -46,12 +48,10 @@ class SecurityConfiguration(
     @Bean
     fun webSecurityCustomizer(): WebSecurityCustomizer =
         WebSecurityCustomizer { web: WebSecurity ->
-        web.ignoring() // Spring Security should completely ignore URLs starting with /resources/
-            .requestMatchers(
-                "/api/v1/auth/**",
-                "/api/v1/user/create",
-                "/api/v1/task/**",
-            )
-    }
+            web.ignoring() // Spring Security should completely ignore URLs starting with /resources/
+                .requestMatchers(
+                    "/api/v1/task**",
+                )
+        }
 
 }

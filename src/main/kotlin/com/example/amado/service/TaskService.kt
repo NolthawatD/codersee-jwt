@@ -5,7 +5,7 @@ import com.example.amado.controller.task.TaskCreateRequest
 import com.example.amado.controller.task.TaskDto
 import com.example.amado.controller.task.TaskUpdateRequest
 import com.example.amado.exception.BadRequestException
-import com.example.amado.exception.TaskNotFoundException
+import com.example.amado.exception.NotFoundException
 import com.example.amado.repository.TaskRepository
 import org.springframework.stereotype.Service
 import org.springframework.util.ReflectionUtils
@@ -34,7 +34,7 @@ class TaskService(private val taskRepository: TaskRepository) {
 
     private fun checkTaskForId(id: Long) {
         if (!taskRepository.existsById(id)) {
-            throw TaskNotFoundException("Task with the ID: $id does not exist!")
+            throw NotFoundException("Task with the ID: $id does not exist!")
         }
     }
 
