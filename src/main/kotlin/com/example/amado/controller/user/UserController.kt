@@ -1,18 +1,11 @@
 package com.example.amado.controller.user
 
-import com.example.amado.controller.task.TaskCreateRequest
-import com.example.amado.controller.task.TaskDto
-import com.example.amado.controller.task.TaskUpdateRequest
-import com.example.amado.data.Role
-import com.example.amado.data.User
 import com.example.amado.service.UserService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.server.ResponseStatusException
-import java.util.*
 
 @RestController
 @RequestMapping("api/v1/user")

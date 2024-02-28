@@ -1,6 +1,6 @@
 package com.example.amado.repository
 
-import com.example.amado.data.Article
+import com.example.amado.models.Article
 import org.springframework.stereotype.Repository
 import java.util.*
 

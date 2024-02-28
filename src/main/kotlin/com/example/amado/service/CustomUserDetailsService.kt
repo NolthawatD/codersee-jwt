@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 
-typealias  ApplicationUser = com.example.amado.data.User
+typealias  ApplicationUser = com.example.amado.models.User
 
 @Service
 class CustomUserDetailsService(

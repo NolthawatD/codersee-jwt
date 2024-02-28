@@ -1,6 +1,6 @@
 package com.example.amado.service
 
-import com.example.amado.data.Task
+import com.example.amado.models.Task
 import com.example.amado.controller.task.TaskCreateRequest
 import com.example.amado.controller.task.TaskDto
 import com.example.amado.controller.task.TaskUpdateRequest

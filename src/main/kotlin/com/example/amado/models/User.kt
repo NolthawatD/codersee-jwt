@@ -1,4 +1,4 @@
-package com.example.amado.data
+package com.example.amado.models
 
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank

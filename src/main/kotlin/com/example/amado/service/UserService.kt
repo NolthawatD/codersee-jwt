@@ -3,7 +3,7 @@ package com.example.amado.service
 import com.example.amado.controller.user.UserCreateRequest
 import com.example.amado.controller.user.UserDto
 import com.example.amado.controller.user.UserUpdateRequest
-import com.example.amado.data.User
+import com.example.amado.models.User
 import com.example.amado.exception.BadRequestException
 import com.example.amado.exception.NotFoundException
 import com.example.amado.repository.UserRepository

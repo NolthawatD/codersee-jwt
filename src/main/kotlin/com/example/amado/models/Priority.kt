@@ -1,4 +1,4 @@
-package com.example.amado.data
+package com.example.amado.models
 
 enum class Priority {
     LOW, MEDIUM, HIGH

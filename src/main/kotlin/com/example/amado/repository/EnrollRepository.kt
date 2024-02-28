@@ -1,7 +1,7 @@
 package com.example.amado.repository
 
-import com.example.amado.data.Course
-import com.example.amado.data.Student
+import com.example.amado.models.Course
+import com.example.amado.models.Student
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

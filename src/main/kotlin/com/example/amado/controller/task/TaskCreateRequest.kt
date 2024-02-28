@@ -1,6 +1,6 @@
 package com.example.amado.controller.task
 
-import com.example.amado.data.Priority
+import com.example.amado.models.Priority
 import jakarta.validation.constraints.NotBlank
 import java.time.LocalDateTime
 

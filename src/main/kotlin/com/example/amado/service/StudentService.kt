@@ -2,7 +2,7 @@ package com.example.amado.service
 
 import com.example.amado.controller.enroll.StudentCreateRequest
 import com.example.amado.controller.enroll.StudentDto
-import com.example.amado.data.Student
+import com.example.amado.models.Student
 import com.example.amado.exception.NotFoundException
 import com.example.amado.repository.StudentRepository
 import org.springframework.stereotype.Service

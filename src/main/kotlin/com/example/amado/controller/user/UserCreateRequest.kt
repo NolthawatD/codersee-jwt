@@ -1,7 +1,6 @@
 package com.example.amado.controller.user
 
-import com.example.amado.data.Priority
-import com.example.amado.data.Role
+import com.example.amado.models.Role
 import jakarta.validation.constraints.NotBlank
 
 data class UserCreateRequest(

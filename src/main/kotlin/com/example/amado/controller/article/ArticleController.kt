@@ -1,6 +1,6 @@
 package com.example.amado.controller.article
 
-import com.example.amado.data.Article
+import com.example.amado.models.Article
 import com.example.amado.service.ArticleService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

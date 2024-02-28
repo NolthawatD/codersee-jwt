@@ -1,4 +1,4 @@
-package com.example.amado.data
+package com.example.amado.models
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
