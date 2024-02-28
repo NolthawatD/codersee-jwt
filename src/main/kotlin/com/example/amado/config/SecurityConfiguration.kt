@@ -53,6 +53,7 @@ class SecurityConfiguration(
                     "/api/v1/task**",
                     "/api/v1/student/**",
                     "/api/v1/course/**",
+                    "/api/v1/product/**",
                 )
         }
 

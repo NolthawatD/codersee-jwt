@@ -10,7 +10,6 @@ import java.time.LocalDateTime
     name = "users",
     uniqueConstraints = [UniqueConstraint(name = "uk_user_email", columnNames = ["email"])]
 )
-
 class User {
     @Id
     @GeneratedValue(generator = "user_sequence", strategy = GenerationType.SEQUENCE)
