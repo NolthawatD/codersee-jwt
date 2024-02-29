@@ -46,7 +46,6 @@ class TokenService(
         return userDetails.username == email && !isExpired(token)
     }
 
-
     private fun getAllClaims(token: String): Claims {
         val parser = Jwts.parser()
             .verifyWith(secretKey)
