@@ -4,8 +4,8 @@ import com.example.amado.controller.user.UserCreateRequest
 import com.example.amado.controller.user.UserDto
 import com.example.amado.controller.user.UserUpdateRequest
 import com.example.amado.models.User
-import com.example.amado.exception.BadRequestException
-import com.example.amado.exception.NotFoundException
+import com.example.amado.exception.BadRequestExceptionCustom
+import com.example.amado.exception.NotFoundExceptionCustom
 import com.example.amado.repository.UserRepository
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
@@ -24,6 +24,7 @@ class UserService(
 
     private fun mappingUserEntityToDto(user: User) = UserDto(
         user.id,
+        user.uuid,
         user.email,
         user.password,
         user.role,
@@ -38,7 +39,7 @@ class UserService(
 
     private fun checkUserForId(id: Long) {
         if (!userRepository.existsById(id)) {
-            throw NotFoundException("User with the ID: $id not found!")
+            throw NotFoundExceptionCustom("User with the ID: $id not found!")
         }
     }
 
@@ -46,7 +47,7 @@ class UserService(
         println("=== check does email exist")
         if (userRepository.doesEmailExist(request.email)) {
             println("=== found email exist")
-            throw BadRequestException("There is already a user with the email: ${request.email}")
+            throw BadRequestExceptionCustom("There is already a user with the email: ${request.email}")
         }
 
         val user = User()

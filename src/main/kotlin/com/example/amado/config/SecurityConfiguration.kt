@@ -27,10 +27,10 @@ class SecurityConfiguration(
             .csrf { it.disable() }
             .authorizeHttpRequests {
                 it
-                    .requestMatchers("/api/v1/auth", "/api/v1/auth/refresh", "/error")
-                    .permitAll()
-                    .requestMatchers(HttpMethod.POST, "/api/v1/user/create")
-                    .permitAll()
+//                    .requestMatchers("/api/v1/auth", "/api/v1/auth/**", "/error")
+//                    .permitAll()
+//                    .requestMatchers(HttpMethod.POST, "/api/v1/user/create")
+//                    .permitAll()
 //                    .requestMatchers(HttpMethod.PATCH, "/api/v1/user/update/**")
 //                    .permitAll()
                     .requestMatchers("/api/v1/user/delete/**")
@@ -50,10 +50,13 @@ class SecurityConfiguration(
         WebSecurityCustomizer { web: WebSecurity ->
             web.ignoring() // Spring Security should completely ignore URLs starting with /resources/
                 .requestMatchers(
+                    "/api/v1/auth**",
                     "/api/v1/task**",
                     "/api/v1/student/**",
                     "/api/v1/course/**",
                     "/api/v1/product/**",
+                    "/api/v1/movies/**",
+                    "/api/v1/actors/**",
                 )
         }
 

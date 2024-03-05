@@ -20,14 +20,17 @@ class AuthenticationService(
     private val refreshTokenRepository: RefreshTokenRepository,
 ) {
     fun authentication(authRequest: AuthenticationRequest): AuthenticationResponse {
-        authManager.authenticate(
-            UsernamePasswordAuthenticationToken(
-                authRequest.email,
-                authRequest.password
-            )
-        )
+        println("authRequest === $authRequest")
 
-        val user = userDetailsService.loadUserByUsername(authRequest.email)
+        // #not checking password
+//        authManager.authenticate(
+//            UsernamePasswordAuthenticationToken(
+//                authRequest.uuid,
+//                "Password",
+//            )
+//        )
+
+        val user = userDetailsService.loadUserByUsername(authRequest.uuid)
 
         val accessToken = generateAccessToken(user)
         val refreshToken = generateRefreshToken(user)
@@ -41,7 +44,7 @@ class AuthenticationService(
     }
 
     fun refreshAccessToken(token: String): String? {
-       val extractedEmail = tokenService.extractEmail(token)
+        val extractedEmail = tokenService.extractEmail(token)
 
         return extractedEmail?.let { email ->
             val currentUserDetails = userDetailsService.loadUserByUsername(email)

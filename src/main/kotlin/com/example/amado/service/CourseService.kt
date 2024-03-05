@@ -5,7 +5,7 @@ import com.example.amado.controller.enroll.CourseDto
 import com.example.amado.controller.enroll.StudentDto
 import com.example.amado.models.Course
 import com.example.amado.models.Student
-import com.example.amado.exception.NotFoundException
+import com.example.amado.exception.NotFoundExceptionCustom
 import com.example.amado.repository.CourseRepository
 import org.springframework.stereotype.Service
 import java.util.stream.Collectors
@@ -29,7 +29,7 @@ class CourseService(private val courseRepository: CourseRepository) {
 
     private fun checkCourseForId(id: Long) {
         if (!courseRepository.existsById(id)) {
-            throw NotFoundException("Course with the ID: $id does not exist!")
+            throw NotFoundExceptionCustom("Course with the ID: $id does not exist!")
         }
     }
 

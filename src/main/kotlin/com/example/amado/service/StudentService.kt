@@ -3,7 +3,7 @@ package com.example.amado.service
 import com.example.amado.controller.enroll.StudentCreateRequest
 import com.example.amado.controller.enroll.StudentDto
 import com.example.amado.models.Student
-import com.example.amado.exception.NotFoundException
+import com.example.amado.exception.NotFoundExceptionCustom
 import com.example.amado.repository.StudentRepository
 import org.springframework.stereotype.Service
 import java.util.stream.Collectors
@@ -22,7 +22,7 @@ class StudentService(private val studentRepository: StudentRepository) {
 
     private fun checkStudentForId(id: Long) {
         if (!studentRepository.existsById(id)) {
-            throw NotFoundException("Student with the ID: $id does not exist!")
+            throw NotFoundExceptionCustom("Student with the ID: $id does not exist!")
         }
     }
 

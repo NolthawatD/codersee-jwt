@@ -15,7 +15,7 @@ class CustomUserDetailsService(
 ): UserDetailsService {
 
     override fun loadUserByUsername(username: String): UserDetails =
-        userRepository.findByEmail(username)
+        userRepository.findUserByUuid(username)
             ?.mapToUserDetails()
             ?: throw UsernameNotFoundException("Not found!")
 

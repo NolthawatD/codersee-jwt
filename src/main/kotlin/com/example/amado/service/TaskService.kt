@@ -4,8 +4,8 @@ import com.example.amado.models.Task
 import com.example.amado.controller.task.TaskCreateRequest
 import com.example.amado.controller.task.TaskDto
 import com.example.amado.controller.task.TaskUpdateRequest
-import com.example.amado.exception.BadRequestException
-import com.example.amado.exception.NotFoundException
+import com.example.amado.exception.BadRequestExceptionCustom
+import com.example.amado.exception.NotFoundExceptionCustom
 import com.example.amado.repository.TaskRepository
 import org.springframework.stereotype.Service
 import org.springframework.util.ReflectionUtils
@@ -34,7 +34,7 @@ class TaskService(private val taskRepository: TaskRepository) {
 
     private fun checkTaskForId(id: Long) {
         if (!taskRepository.existsById(id)) {
-            throw NotFoundException("Task with the ID: $id does not exist!")
+            throw NotFoundExceptionCustom("Task with the ID: $id does not exist!")
         }
     }
 
@@ -55,7 +55,7 @@ class TaskService(private val taskRepository: TaskRepository) {
 
     fun createTask(request: TaskCreateRequest): TaskDto {
         if (taskRepository.doesDescriptionExist(request.description)) {
-            throw BadRequestException("There is already a task with the description: ${request.description}")
+            throw BadRequestExceptionCustom("There is already a task with the description: ${request.description}")
         }
         val task = Task()
         mappingFromRequestToEntity(task, request)

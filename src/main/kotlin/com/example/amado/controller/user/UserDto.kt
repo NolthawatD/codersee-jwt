@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 
 data class UserDto(
     val id : Long,
+    val uuid : String,
     val email : String,
     val password : String,
     val role : Role,

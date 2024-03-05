@@ -10,6 +10,8 @@ interface UserRepository : JpaRepository<User, Long> {
 
     fun findUserById(id: Long): User
 
+    fun findUserByUuid(uuid: String): User?
+
     fun findByEmail(email: String): User?
 
     @Query(value = "SELECT * FROM users", nativeQuery = true)
